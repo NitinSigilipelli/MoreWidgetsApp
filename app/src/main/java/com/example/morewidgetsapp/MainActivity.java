@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     Spinner spinner;
     Button timePickerButton;
+    Button datePickerButtton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
         box2 = findViewById(R.id.checkBox2);
         btn = findViewById(R.id.button);
         timePickerButton = findViewById(R.id.button2);
+        datePickerButtton = findViewById(R.id.button3);
+        datePickerButtton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment dialogFragment = new DatePickerFragment();
+                dialogFragment.show(getSupportFragmentManager(),"Pick A Date");
+            }
+        });
         timePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
